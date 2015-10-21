@@ -19,7 +19,7 @@ io.on('connection', function(socket){
   
   socket.on('subscribe', function (data) {
     console.log(data.user + ' joined room: ' + data.room);
-    socket.join(data);
+    socket.join(data.room);
   });
   
   socket.on('send message', function (data) {
