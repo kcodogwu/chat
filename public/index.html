@@ -93,6 +93,7 @@
       });
       
       socket.on('chat message', function (data) {
+        alert(data.message);
         $('#messages').append($('<li>').text(data.message));
       });
     </script>
