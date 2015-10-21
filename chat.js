@@ -28,7 +28,7 @@ io.on('connection', function(socket){
     if (msg == null || msg == 'undefined') { return; }
     
     console.log(data.sender + ' is posting a message (' + msg + ') into room: ' + data.room);
-    io.sockets.in(data.room).emit('chat message', { message: msg });
+    io.to(data.room).emit('chat message', { message: msg });
   });
   
   socket.on('disconnect', function () { 
