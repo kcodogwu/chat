@@ -76,6 +76,7 @@
             e.preventDefault();
             $theChatUser = $(this);
             receiverId = $theChatUser.text();
+            $('#messages').empty();
             socket.emit('subscribe', { room: fn(senderId, receiverId), user: senderId });
         });
       });
